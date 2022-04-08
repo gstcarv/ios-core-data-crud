@@ -20,6 +20,7 @@ class ContactCoreDataManager: CoreDataManager<ContactRegisterData, Contact> {
         contact.email = entity.email
         contact.phoneNumber = entity.phoneNumber
         contact.createdAt = Date.now
+        contact.image = entity.image.jpegData(compressionQuality: 1)
         
         try self.getContext().save()
         

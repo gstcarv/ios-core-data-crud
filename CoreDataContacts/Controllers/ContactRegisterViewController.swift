@@ -13,6 +13,7 @@ class ContactRegisterViewController: UIViewController {
     @IBOutlet weak var emailField: UITextField!
     @IBOutlet weak var phoneNumberField: UITextField!
     @IBOutlet weak var saveButton: UIButton!
+    @IBOutlet weak var photoThumbnail: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,6 +26,7 @@ class ContactRegisterViewController: UIViewController {
         contactData.name = nameField!.text
         contactData.email = emailField!.text
         contactData.phoneNumber = phoneNumberField!.text
+        contactData.image = photoThumbnail.backgroundImage(for: .normal)
         
         let contactsManager = ContactCoreDataManager()
         
@@ -36,12 +38,25 @@ class ContactRegisterViewController: UIViewController {
         }
     }
     
+    @IBAction func onPhotoChangePress(_ sender: Any) {
+        let imagePicker = UIImagePickerController()
+        imagePicker.delegate = self
+        imagePicker.allowsEditing = true
+        present(imagePicker, animated: true, completion: nil)
+    }
+    
     @IBAction func onChangeField(_ sender: Any) {
         validateFields()
     }
     
+    var userHasSelectedImage = false;
+    
     func validateFields () {
         var isValid = true
+        
+        if (!userHasSelectedImage) {
+            isValid = false
+        }
         
         if  nameField.text!.isEmpty || nameField.text!.count < 4 {
             isValid = false
@@ -61,4 +76,18 @@ class ContactRegisterViewController: UIViewController {
             saveButton.isEnabled = false
         }
     }
+}
+
+extension ContactRegisterViewController: UINavigationControllerDelegate, UIImagePickerControllerDelegate  {
+ 
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+            
+        if let selected = info[.editedImage] as? UIImage {
+            photoThumbnail.setBackgroundImage(selected, for: .normal)
+            userHasSelectedImage = true
+        }
+        
+        picker.dismiss(animated: true, completion: nil)
+    }
+    
 }

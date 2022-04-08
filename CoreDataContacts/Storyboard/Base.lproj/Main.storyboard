@@ -193,14 +193,22 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gW5-n2-l8y">
                                         <rect key="frame" x="0.0" y="0.0" width="364" height="240"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XDv-4K-9cq">
-                                                <rect key="frame" x="32" y="0.0" width="300" height="240"/>
+                                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XDv-4K-9cq">
+                                                <rect key="frame" x="62" y="0.0" width="240" height="240"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="240" id="VDg-xW-6Md"/>
-                                                    <constraint firstAttribute="width" constant="300" id="sPK-8k-OhL"/>
+                                                    <constraint firstAttribute="width" constant="240" id="sPK-8k-OhL"/>
                                                 </constraints>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                 <state key="normal" backgroundImage="User"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="120"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="onPhotoChangePress:" destination="JEC-To-J6D" eventType="touchUpInside" id="Dgl-VO-4aP"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -325,6 +333,7 @@
                         <outlet property="emailField" destination="udb-C8-If0" id="2D0-vQ-OMy"/>
                         <outlet property="nameField" destination="7dK-Es-Mjp" id="Ubm-aB-6DK"/>
                         <outlet property="phoneNumberField" destination="tOb-16-Jae" id="MbW-zZ-3wd"/>
+                        <outlet property="photoThumbnail" destination="XDv-4K-9cq" id="Yde-r7-MBU"/>
                         <outlet property="saveButton" destination="n1D-IC-81P" id="i64-ad-iRZ"/>
                     </connections>
                 </viewController>
@@ -337,7 +346,7 @@
     <resources>
         <image name="Add" width="391" height="391"/>
         <image name="MockPersonImage" width="500" height="333.5"/>
-        <image name="User" width="430" height="340.5"/>
+        <image name="User" width="300" height="300"/>
         <namedColor name="AccentColor">
             <color red="0.48627450980392156" green="0.28627450980392155" blue="0.8784313725490196" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

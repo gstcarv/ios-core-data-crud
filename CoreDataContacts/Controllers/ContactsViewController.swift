@@ -63,6 +63,11 @@ class ContactsViewController: UIViewController, UITableViewDelegate, UITableView
         contactCell.name.text = currentContact.name
         contactCell.email.text = currentContact.email
         
+        if let photo = currentContact.image {
+            contactCell.photo.image = UIImage(data: photo)
+        }
+       
+        
         return contactCell
     }
 }

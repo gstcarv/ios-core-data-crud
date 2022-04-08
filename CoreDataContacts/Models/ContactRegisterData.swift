@@ -6,9 +6,11 @@
 //
 
 import Foundation
+import UIKit
 
 class ContactRegisterData {
     var name: String!
     var email: String!
     var phoneNumber: String!
+    var image: UIImage!
 }
