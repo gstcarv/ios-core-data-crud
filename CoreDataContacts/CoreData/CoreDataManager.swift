@@ -26,15 +26,19 @@ class CoreDataManager<T, U> {
         fatalError("Not implemented")
     }
     
-    func update (id: UUID, entity: T) throws -> U {
+    func update (id: NSManagedObjectID, entity: T) throws -> U {
         fatalError("Not implemented")
     }
     
-    func delete (id: UUID) throws {
+    func delete (id: NSManagedObjectID) throws {
         fatalError("Not implemented")
     }
     
     func getAll () throws -> [U] {
+        fatalError("Not implemented")
+    }
+    
+    func getById (id: NSManagedObjectID) throws -> U {
         fatalError("Not implemented")
     }
     

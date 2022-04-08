@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import CoreData
 
 class ContactCoreDataManager: CoreDataManager<ContactRegisterData, Contact> {
     
@@ -28,7 +29,16 @@ class ContactCoreDataManager: CoreDataManager<ContactRegisterData, Contact> {
     }
     
     override func getAll() throws -> [Contact] {
-        return try getContext().fetch(Contact.fetchRequest())
+        let fetchRequest = Contact.fetchRequest();
+        
+        let sortByDate = NSSortDescriptor(key: #keyPath(Contact.createdAt), ascending: false)
+        
+        fetchRequest.sortDescriptors = [sortByDate]
+        
+        return try getContext().fetch(fetchRequest)
     }
     
+    override func getById(id: NSManagedObjectID) throws -> Contact {
+        return try getContext().existingObject(with: id) as! Contact
+    }
 }

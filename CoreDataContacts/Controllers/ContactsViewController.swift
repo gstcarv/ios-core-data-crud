@@ -32,6 +32,16 @@ class ContactsViewController: UIViewController, UITableViewDelegate, UITableView
         UILoad()
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "openContactDetails") {
+            let contactDetailsController = segue.destination as! ContactDetailsViewController
+            
+            if let index = tableView.indexPathForSelectedRow?.row {
+                contactDetailsController.selectedContactId = contacts[index].objectID
+            }
+        }
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         fetchContacts()
     }
@@ -67,7 +77,6 @@ class ContactsViewController: UIViewController, UITableViewDelegate, UITableView
             contactCell.photo.image = UIImage(data: photo)
         }
        
-        
         return contactCell
     }
 }

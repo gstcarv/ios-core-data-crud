@@ -20,6 +20,7 @@
 		B7EC23122800D81E00FB56C8 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7EC23112800D81E00FB56C8 /* CoreDataManager.swift */; };
 		B7EC23142800DA1C00FB56C8 /* ContactCoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7EC23132800DA1C00FB56C8 /* ContactCoreDataManager.swift */; };
 		B7EC23172800DD4900FB56C8 /* ErrorHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7EC23162800DD4900FB56C8 /* ErrorHelper.swift */; };
+		B7EC231B2800F30900FB56C8 /* ContactDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7EC231A2800F30900FB56C8 /* ContactDetailsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		B7EC23112800D81E00FB56C8 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		B7EC23132800DA1C00FB56C8 /* ContactCoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactCoreDataManager.swift; sourceTree = "<group>"; };
 		B7EC23162800DD4900FB56C8 /* ErrorHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorHelper.swift; sourceTree = "<group>"; };
+		B7EC231A2800F30900FB56C8 /* ContactDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDetailsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +100,7 @@
 			children = (
 				B7EC23062800B26D00FB56C8 /* ContactsViewController.swift */,
 				B7EC230B2800D42F00FB56C8 /* ContactRegisterViewController.swift */,
+				B7EC231A2800F30900FB56C8 /* ContactDetailsViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -230,6 +233,7 @@
 				B7EC22E32800AC7F00FB56C8 /* SceneDelegate.swift in Sources */,
 				B7EC23072800B26D00FB56C8 /* ContactsViewController.swift in Sources */,
 				B7EC230F2800D52A00FB56C8 /* ContactRegisterData.swift in Sources */,
+				B7EC231B2800F30900FB56C8 /* ContactDetailsViewController.swift in Sources */,
 				B7EC23142800DA1C00FB56C8 /* ContactCoreDataManager.swift in Sources */,
 				B7EC23122800D81E00FB56C8 /* CoreDataManager.swift in Sources */,
 				B7EC22EB2800AC7F00FB56C8 /* CoreDataContacts.xcdatamodeld in Sources */,
