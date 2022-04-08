@@ -54,4 +54,12 @@ class ContactCoreDataManager: CoreDataManager<ContactRegisterData, Contact> {
         
         return contact
     }
+    
+    override func delete(id: NSManagedObjectID) throws {
+        let contact = try getById(id: id)
+        
+        getContext().delete(contact)
+        
+        try getContext().save()
+    }
 }

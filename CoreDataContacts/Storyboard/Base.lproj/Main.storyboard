@@ -312,7 +312,11 @@
                     </view>
                     <navigationItem key="navigationItem" id="v3Q-xA-7bO">
                         <rightBarButtonItems>
-                            <barButtonItem systemItem="trash" id="pSy-yR-Jlt"/>
+                            <barButtonItem systemItem="trash" id="pSy-yR-Jlt">
+                                <connections>
+                                    <action selector="onDeletePress:" destination="F7E-Ru-EQZ" id="8mQ-VZ-KvW"/>
+                                </connections>
+                            </barButtonItem>
                             <barButtonItem systemItem="edit" id="5go-Xr-bpG">
                                 <connections>
                                     <segue destination="JEC-To-J6D" kind="show" identifier="openEditContact" id="1YV-5z-hql"/>

@@ -15,7 +15,7 @@ class ContactRegisterViewController: UIViewController {
     @IBOutlet weak var saveButton: UIButton!
     @IBOutlet weak var photoThumbnail: UIButton!
     
-    public var editingContact: Contact? = nil;
+    public var editingContact: Contact? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -71,7 +71,7 @@ class ContactRegisterViewController: UIViewController {
         validateFields()
     }
     
-    var userHasSelectedImage = false;
+    var userHasSelectedImage = false
     
     func validateFields () {
         var isValid = true

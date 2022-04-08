@@ -10,7 +10,7 @@ import CoreData
 
 class ContactDetailsViewController: UIViewController {
 
-    public var selectedContactId: NSManagedObjectID!;
+    public var selectedContactId: NSManagedObjectID!
     
     private var contactData: Contact!
     
@@ -30,6 +30,28 @@ class ContactDetailsViewController: UIViewController {
             
             contactRegisterController.editingContact = contactData
         }
+    }
+    
+    @IBAction func onDeletePress(_ sender: Any) {
+        let deleteConfirmation = UIAlertController(title: "Delete contact", message: "Are you sure you want to delete te contact \(contactData.name ?? "")?", preferredStyle: .actionSheet)
+        
+        let deleteAction = UIAlertAction(title: "Delete", style: .destructive, handler: {(action) in
+            
+            do {
+                let contactManager = ContactCoreDataManager()
+                try contactManager.delete(id: self.contactData.objectID)
+                
+                self.navigationController?.popViewController(animated: true)
+            } catch {
+                ErrorHelper.handleError(self, message: "Error occurs while deleting contact")
+            }
+
+        })
+        
+        deleteConfirmation.addAction(deleteAction)
+        deleteConfirmation.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        
+        present(deleteConfirmation, animated: true, completion: nil)
     }
     
     override func viewWillAppear(_ animated: Bool) {
