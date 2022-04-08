@@ -24,6 +24,14 @@ class ContactDetailsViewController: UIViewController {
         super.viewDidLoad()
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "openEditContact" {
+            let contactRegisterController = segue.destination as! ContactRegisterViewController
+            
+            contactRegisterController.editingContact = contactData
+        }
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         do {
             let contactManager = ContactCoreDataManager()

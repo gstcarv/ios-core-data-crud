@@ -41,4 +41,17 @@ class ContactCoreDataManager: CoreDataManager<ContactRegisterData, Contact> {
     override func getById(id: NSManagedObjectID) throws -> Contact {
         return try getContext().existingObject(with: id) as! Contact
     }
+    
+    override func update(id: NSManagedObjectID, entity: ContactRegisterData) throws -> Contact {
+        let contact = try getById(id: id)
+        
+        contact.phoneNumber = entity.phoneNumber
+        contact.email = entity.email
+        contact.image = entity.image.jpegData(compressionQuality: 1)
+        contact.name = entity.name
+        
+        try self.getContext().save()
+        
+        return contact
+    }
 }

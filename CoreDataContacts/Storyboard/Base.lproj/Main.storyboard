@@ -188,12 +188,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="MockPersonImage" translatesAutoresizingMaskIntoConstraints="NO" id="57r-Tx-bqd">
-                                <rect key="frame" x="0.0" y="88" width="414" height="334"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="334" id="QZa-s7-HDm"/>
-                                </constraints>
-                            </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="pOV-74-bsK">
                                 <rect key="frame" x="25" y="447" width="364" height="250"/>
                                 <subviews>
@@ -298,6 +292,12 @@
                                     <constraint firstAttribute="height" constant="250" id="btM-iC-P9F"/>
                                 </constraints>
                             </stackView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="MockPersonImage" translatesAutoresizingMaskIntoConstraints="NO" id="57r-Tx-bqd">
+                                <rect key="frame" x="0.0" y="88" width="414" height="334"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="334" id="QZa-s7-HDm"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="kDz-c7-4ak"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -310,7 +310,16 @@
                             <constraint firstItem="pOV-74-bsK" firstAttribute="leading" secondItem="kDz-c7-4ak" secondAttribute="leading" constant="25" id="zax-qc-LKN"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="v3Q-xA-7bO"/>
+                    <navigationItem key="navigationItem" id="v3Q-xA-7bO">
+                        <rightBarButtonItems>
+                            <barButtonItem systemItem="trash" id="pSy-yR-Jlt"/>
+                            <barButtonItem systemItem="edit" id="5go-Xr-bpG">
+                                <connections>
+                                    <segue destination="JEC-To-J6D" kind="show" identifier="openEditContact" id="1YV-5z-hql"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
+                    </navigationItem>
                     <connections>
                         <outlet property="createdAtLabel" destination="Mm1-J3-Jp8" id="bXR-Vb-gpr"/>
                         <outlet property="emailLabel" destination="rYG-z1-IcD" id="aj6-sk-Tdf"/>
@@ -470,9 +479,7 @@
                             <constraint firstItem="2U5-S9-FeX" firstAttribute="bottom" secondItem="n1D-IC-81P" secondAttribute="bottom" constant="179" id="ncu-Ff-MAP"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Add Contact" id="dYS-ur-49k">
-                        <barButtonItem key="backBarButtonItem" title="sdasdasd" id="krm-Qf-OOz"/>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Add Contact" id="dYS-ur-49k"/>
                     <connections>
                         <outlet property="emailField" destination="udb-C8-If0" id="2D0-vQ-OMy"/>
                         <outlet property="nameField" destination="7dK-Es-Mjp" id="Ubm-aB-6DK"/>
@@ -486,6 +493,9 @@
             <point key="canvasLocation" x="1372" y="-914"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="1YV-5z-hql"/>
+    </inferredMetricsTieBreakers>
     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
     <resources>
         <image name="Add" width="391" height="391"/>

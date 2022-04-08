@@ -15,8 +15,25 @@ class ContactRegisterViewController: UIViewController {
     @IBOutlet weak var saveButton: UIButton!
     @IBOutlet weak var photoThumbnail: UIButton!
     
+    public var editingContact: Contact? = nil;
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if editingContact != nil {
+            nameField.text = editingContact?.name
+            emailField.text = editingContact?.email
+            phoneNumberField.text = editingContact?.phoneNumber
+            
+            if let image = editingContact?.image {
+                photoThumbnail.setBackgroundImage(UIImage(data: image), for: .normal)
+                userHasSelectedImage = true
+            }
+            
+            saveButton.setTitle("Update contact", for: .normal)
+            navigationItem.title = "Edit \(editingContact!.name ?? "")"
+        }
+        
         validateFields()
     }
     
@@ -31,7 +48,12 @@ class ContactRegisterViewController: UIViewController {
         let contactsManager = ContactCoreDataManager()
         
         do {
-            _ = try contactsManager.add(contactData)
+            if editingContact == nil {
+                _ = try contactsManager.add(contactData)
+            } else {
+                _ = try contactsManager.update(id: editingContact!.objectID, entity: contactData)
+            }
+            
             self.navigationController?.popViewController(animated: true)
         } catch {
             ErrorHelper.handleError(self, message: "Error occurs saving contact. Try again later")
@@ -87,6 +109,7 @@ extension ContactRegisterViewController: UINavigationControllerDelegate, UIImage
             userHasSelectedImage = true
         }
         
+        validateFields()
         picker.dismiss(animated: true, completion: nil)
     }
     
