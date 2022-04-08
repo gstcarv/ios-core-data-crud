@@ -133,6 +133,11 @@
                                                 <constraint firstAttribute="trailing" secondItem="yot-7A-BOL" secondAttribute="trailing" constant="5" id="ojY-te-8DD"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="email" destination="vum-BQ-cpT" id="Ksw-IR-N2m"/>
+                                            <outlet property="name" destination="uPX-go-xGf" id="ZtZ-QE-AHp"/>
+                                            <outlet property="photo" destination="VKT-aS-yVe" id="qxy-bK-1Pw"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -177,7 +182,7 @@
         <!--Add Contact-->
         <scene sceneID="8qg-VY-m3S">
             <objects>
-                <viewController id="JEC-To-J6D" sceneMemberID="viewController">
+                <viewController id="JEC-To-J6D" customClass="ContactRegisterViewController" customModule="CoreDataContacts" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="s2b-Aq-ZYn">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -211,7 +216,10 @@
                                                 <rect key="frame" x="10" y="10" width="344" height="34"/>
                                                 <color key="backgroundColor" name="LightGray"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
+                                                <connections>
+                                                    <action selector="onChangeField:" destination="JEC-To-J6D" eventType="editingChanged" id="Dog-ZX-QN7"/>
+                                                </connections>
                                             </textField>
                                         </subviews>
                                         <color key="backgroundColor" name="LightGray"/>
@@ -235,7 +243,10 @@
                                                 <rect key="frame" x="10" y="10" width="344" height="34"/>
                                                 <color key="backgroundColor" name="LightGray"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
+                                                <connections>
+                                                    <action selector="onChangeField:" destination="JEC-To-J6D" eventType="editingChanged" id="HZc-rx-0Yh"/>
+                                                </connections>
                                             </textField>
                                         </subviews>
                                         <color key="backgroundColor" name="LightGray"/>
@@ -259,7 +270,10 @@
                                                 <rect key="frame" x="10" y="10" width="344" height="34"/>
                                                 <color key="backgroundColor" name="LightGray"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
+                                                <connections>
+                                                    <action selector="onChangeField:" destination="JEC-To-J6D" eventType="editingChanged" id="6di-t5-2t4"/>
+                                                </connections>
                                             </textField>
                                         </subviews>
                                         <color key="backgroundColor" name="LightGray"/>
@@ -287,6 +301,9 @@
                                 <buttonConfiguration key="configuration" style="filled" title="Save Contact" cornerStyle="large">
                                     <color key="baseBackgroundColor" name="AccentColor"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="handleSaveContact:" destination="JEC-To-J6D" eventType="touchUpInside" id="hcJ-ya-1oy"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="2U5-S9-FeX"/>
@@ -304,6 +321,12 @@
                     <navigationItem key="navigationItem" title="Add Contact" id="dYS-ur-49k">
                         <barButtonItem key="backBarButtonItem" title="sdasdasd" id="krm-Qf-OOz"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="emailField" destination="udb-C8-If0" id="2D0-vQ-OMy"/>
+                        <outlet property="nameField" destination="7dK-Es-Mjp" id="Ubm-aB-6DK"/>
+                        <outlet property="phoneNumberField" destination="tOb-16-Jae" id="MbW-zZ-3wd"/>
+                        <outlet property="saveButton" destination="n1D-IC-81P" id="i64-ad-iRZ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CzI-9d-y0z" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
