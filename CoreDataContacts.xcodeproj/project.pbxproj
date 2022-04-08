@@ -58,16 +58,48 @@
 		B7EC22DF2800AC7F00FB56C8 /* CoreDataContacts */ = {
 			isa = PBXGroup;
 			children = (
+				B7EC23022800AD4300FB56C8 /* Controllers */,
+				B7EC23052800AD5E00FB56C8 /* Storyboard */,
+				B7EC23032800AD4900FB56C8 /* Resources */,
+				B7EC23012800AD3E00FB56C8 /* Application */,
+			);
+			path = CoreDataContacts;
+			sourceTree = "<group>";
+		};
+		B7EC23012800AD3E00FB56C8 /* Application */ = {
+			isa = PBXGroup;
+			children = (
 				B7EC22E02800AC7F00FB56C8 /* AppDelegate.swift */,
 				B7EC22E22800AC7F00FB56C8 /* SceneDelegate.swift */,
-				B7EC22E42800AC7F00FB56C8 /* ViewController.swift */,
-				B7EC22E62800AC7F00FB56C8 /* Main.storyboard */,
-				B7EC22EC2800AC8100FB56C8 /* Assets.xcassets */,
-				B7EC22EE2800AC8100FB56C8 /* LaunchScreen.storyboard */,
 				B7EC22F12800AC8100FB56C8 /* Info.plist */,
 				B7EC22E92800AC7F00FB56C8 /* CoreDataContacts.xcdatamodeld */,
 			);
-			path = CoreDataContacts;
+			name = Application;
+			sourceTree = "<group>";
+		};
+		B7EC23022800AD4300FB56C8 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				B7EC22E42800AC7F00FB56C8 /* ViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		B7EC23032800AD4900FB56C8 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				B7EC22EC2800AC8100FB56C8 /* Assets.xcassets */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		B7EC23052800AD5E00FB56C8 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				B7EC22E62800AC7F00FB56C8 /* Main.storyboard */,
+				B7EC22EE2800AC8100FB56C8 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
