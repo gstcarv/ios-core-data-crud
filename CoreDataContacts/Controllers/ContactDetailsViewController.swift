@@ -20,6 +20,10 @@ class ContactDetailsViewController: UIViewController {
     @IBOutlet weak var phoneLabel: UILabel!
     @IBOutlet weak var createdAtLabel: UILabel!
     
+    override var preferredStatusBarStyle: UIStatusBarStyle{
+       return .lightContent
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }

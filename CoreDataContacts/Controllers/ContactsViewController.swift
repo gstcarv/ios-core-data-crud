@@ -13,6 +13,10 @@ class ContactsViewController: UIViewController, UITableViewDelegate, UITableView
     @IBOutlet weak var addContactButton: UIButton!
     @IBOutlet weak var tableView: UITableView!
     
+    override var preferredStatusBarStyle: UIStatusBarStyle{
+       return .lightContent
+    }
+    
     func UILoad () {
         addContactButton.layer.shadowColor = UIView().tintColor.cgColor
         addContactButton.layer.shadowOffset = CGSize(width: 0.0, height: 2.0)
@@ -79,4 +83,10 @@ class ContactsViewController: UIViewController, UITableViewDelegate, UITableView
        
         return contactCell
     }
+}
+
+extension UINavigationController {
+   open override var preferredStatusBarStyle: UIStatusBarStyle {
+       return topViewController?.preferredStatusBarStyle ?? .lightContent
+   }
 }

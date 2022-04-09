@@ -387,6 +387,8 @@
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = CoreDataContacts/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Contacts App";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "We need your permission to select a photo";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -414,6 +416,8 @@
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = CoreDataContacts/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Contacts App";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "We need your permission to select a photo";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
